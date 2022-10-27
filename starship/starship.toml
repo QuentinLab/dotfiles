@@ -12,6 +12,8 @@ $cmd_duration $jobs\
 $line_break\
 $character"""
 
+add_newline = true
+
 [git_branch]
 symbol = " "
 format = "[$symbol$branch]($style) "
