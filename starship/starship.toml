@@ -7,6 +7,7 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$docker_context\ 
 $python\
 $cmd_duration $jobs\ 
 $line_break\
