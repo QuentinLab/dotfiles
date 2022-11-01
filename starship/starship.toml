@@ -14,11 +14,13 @@ $line_break\
 $character"""
 
 add_newline = true
+[directory]
+style = "bold fg:#74c7ec"
 
 [git_branch]
 symbol = " "
 format = "[$symbol$branch]($style) "
-style = "bright-black"
+style = "fg:#f9e2af"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
