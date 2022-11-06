@@ -60,8 +60,8 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+m exec $HOME/code/scripts/lock.sh
 
 # change focus
-bindsym $mod+j focus up
-bindsym $mod+k focus down
+bindsym $mod+j focus down 
+bindsym $mod+k focus up 
 bindsym $mod+l focus right
 bindsym $mod+h focus left
 
