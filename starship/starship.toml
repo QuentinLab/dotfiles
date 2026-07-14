@@ -2,6 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
+$conda\
 $git_branch\
 $git_state\
 $git_status\
@@ -16,6 +17,10 @@ $character"""
 add_newline = true
 [directory]
 style = "bold fg:#74c7ec"
+
+[conda]
+ignore_base = false
+format = '[$symbol$environment](dimmed green) '
 
 [git_branch]
 symbol = " "
