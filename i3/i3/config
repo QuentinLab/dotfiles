@@ -233,9 +233,8 @@ gaps outer 5
 bar {
 	font pango: Hack Nerd Font Mono 10 
         status_command ~/.local/bin/bumblebee-status \
-		-m pomodoro spotify cpu disk date time pasink bluetooth system \
+		-m spotify disk date time pasink bluetooth system \
 		-p  \
-                    pomodoro.work="30" \
                     disk.format="{percent:05.02f}% - {size}" disk.system="SI" \
                     time.format="%H:%M:%S " date.format="%a, %b %d %Y" \
                     pulseaudio.autostart="true" \
@@ -256,3 +255,5 @@ bar {
           binding_mode       #FF5555 #FF5555 #F8F8F2
         }
 }
+
+exec --no-startup-id setxkbmap -model pc105 -layout fr -option grp:alt_shift_toggle
