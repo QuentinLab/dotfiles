@@ -11,3 +11,8 @@ style = "Regular"
 
 [general]
 import = ["/home/quentin/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
