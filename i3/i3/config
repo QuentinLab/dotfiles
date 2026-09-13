@@ -36,6 +36,10 @@ exec --no-startup-id nm-applet
 #Always restart picom when restarting i3
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
+#Start polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -54,7 +58,7 @@ bindsym $mod+Shift+Return exec alacritty -o font.size=9 -e sh -c ranger
 bindsym $mod+Shift+A kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -show-icons
 bindsym $mod+g exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -130,7 +134,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10:"
+set $ws10 "10"
 
 
 # switch to workspace
@@ -207,11 +211,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always feh --bg-fill /home/quentin/Pictures/Wallpapers/main.jpg --bg-fill /home/quentin/Pictures/Wallpapers/second.jpg
-exec_always xrandr --output DP-4 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 60.00 --left-of DP-4
+exec_always --no-startup-id feh --bg-fill /home/quentin/Pictures/Wallpapers/main.jpg --bg-fill /home/quentin/Pictures/Wallpapers/second.jpg
+exec_always --no-startup-id xrandr --output DP-4 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 60.00 --left-of DP-4
 
 #At boot launch spotify/firefox
-exec spotify
+#exec spotify
 #exec firefox
 
 # Previous code for focused : 6272A4
@@ -226,33 +230,34 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 # Gaps
 gaps inner 8
 gaps outer 5 
+gaps top 30
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	font pango: Hack Nerd Font Mono 10 
-        status_command ~/.local/bin/bumblebee-status \
-		-m spotify disk date time pasink bluetooth system \
-		-p  \
-                    disk.format="{percent:05.02f}% - {size}" disk.system="SI" \
-                    time.format="%H:%M:%S " date.format="%a, %b %d %Y" \
-                    pulseaudio.autostart="true" \
-                    system.suspend="systemctl suspend" \
-		-t dracula-powerline
-        strip_workspace_numbers yes
-        tray_output primary
-        position top 
-        colors {
-          background #282A36
-          statusline #F8F8F2
-          separator  #44475A
-
-          focused_workspace  #44475A #44475A #F8F8F2
-          active_workspace   #282A36 #44475A #F8F8F2
-          inactive_workspace #282A36 #282A36 #BFBFBF
-          urgent_workspace   #FF5555 #FF5555 #F8F8F2
-          binding_mode       #FF5555 #FF5555 #F8F8F2
-        }
-}
+#bar {
+#	font pango: Hack Nerd Font Mono 10 
+#        status_command ~/.local/bin/bumblebee-status \
+#		-m spotify disk date time pasink bluetooth system \
+#		-p  \
+#                    disk.format="{percent:05.02f}% - {size}" disk.system="SI" \
+#                    time.format="%H:%M:%S " date.format="%a, %b %d %Y" \
+#                    pulseaudio.autostart="true" \
+#                    system.suspend="systemctl suspend" \
+#		-t dracula-powerline
+#        strip_workspace_numbers yes
+#        tray_output primary
+#        position top 
+#        colors {
+#          background #282A36
+#          statusline #F8F8F2
+#          separator  #44475A
+#
+#          focused_workspace  #44475A #44475A #F8F8F2
+#          active_workspace   #282A36 #44475A #F8F8F2
+#          inactive_workspace #282A36 #282A36 #BFBFBF
+#          urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#          binding_mode       #FF5555 #FF5555 #F8F8F2
+#        }
+#}
 
 exec --no-startup-id setxkbmap -model pc105 -layout fr -option grp:alt_shift_toggle
