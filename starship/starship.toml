@@ -42,9 +42,10 @@ disabled = false
 symbol = " "
 
 [character]
-success_symbol = "[](purple)"
-error_symbol = "[](red)"
-vicmd_symbol = "[](green)"
+success_symbol = "[](purple)"
+
+error_symbol = "[](red)"
+vicmd_symbol = "[](green)"
 
 
 [jobs]
