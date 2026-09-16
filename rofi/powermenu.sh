@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Opzioni
-lock="  Lock"
-logout="󰗽  Logout"
-reboot="  Reboot"
-shutdown="  Shutdown"
+lock="󰌾 Lock"
+logout="󰗽 Logout"
+reboot=" Reboot"
+shutdown="⏻ Shutdown"
+suspend="⏾ Suspend"
 
 # Metti tutto in una variabile
-options="$lock\n$logout\n$reboot\n$shutdown"
+options="$lock\n$logout\n$reboot\n$shutdown\n$suspend"
 
 # Apri Rofi
 selected_option=$(echo -e "$options" | rofi -dmenu -i -p "Power" -config ~/.config/rofi/config.rasi)
@@ -25,5 +26,8 @@ case "$selected_option" in
         ;;
     "$shutdown")
         systemctl poweroff
+        ;;
+    "$suspend")
+        systemctl suspend
         ;;
 esac
