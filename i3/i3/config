@@ -178,6 +178,7 @@ workspace $ws10 output HDMI-0
 
 # assign apps to the right workspace
 for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Firefox"] title_format "Firefox"
 
 
 # reload the configuration file
@@ -218,7 +219,7 @@ exec_always --no-startup-id feh --bg-fill /home/quentin/Pictures/Wallpapers/main
 exec_always --no-startup-id xrandr --output DP-4 --primary --mode 2560x1440 --rate 144.00 --output HDMI-0 --mode 1920x1080 --rate 60.00 --left-of DP-4
 
 #At boot launch spotify/firefox
-#exec spotify
+exec spotify
 #exec firefox
 
 # Previous code for focused : 6272A4
